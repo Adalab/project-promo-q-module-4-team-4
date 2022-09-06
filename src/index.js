@@ -6,7 +6,9 @@ const { v4: uuidv4 } = require('uuid');
 const server = express();
 server.use(cors());
 
-server.use(express.json());
+server.use(express.json({limit: '10mb'}));
+
+const savedCard = [];
 
 const serverPort = 4000;
 server.listen(serverPort, () => {
@@ -14,15 +16,20 @@ server.listen(serverPort, () => {
 });
 
 server.post('/card', (req, res) => {
-    const newCard = { ...req.body }
+    const newCard = { id:uuidv4(), ...req.body }
+    savedCard.push(newCard);
 
-    console.log(req.body);
-    const response = {
+    const result = newCard.name && newCard.job && newCard.email && newCard.linkedin && newCard.github 
+     ?{
         success: true,
-        cardURL: 'https://awesome-profile-cards.herokuapp.com/card/93271662377002269'
-    };
-    console.log('holita');
-    res.json(response);
+        cardURL: `https://localhost:4000/card/${newCard.id}`
+     }
+     :{
+        success: false,
+        error: 'Debes completar todos los campos'
+     };
+
+    res.json(result);
 });
 
 server.get('/card/:id', (req, res) => {
