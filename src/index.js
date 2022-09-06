@@ -15,6 +15,11 @@ server.listen(serverPort, () => {
     console.log(`Server listening at http://localhost:${serverPort}`);
 });
 
+//Servidor de ficheros estáticos.
+const staticServerPath = './src/public-react'
+server.use(express.static(staticServerPath));
+
+
 server.post('/card', (req, res) => {
     const newCard = { id:uuidv4(), ...req.body }
     savedCard.push(newCard);
