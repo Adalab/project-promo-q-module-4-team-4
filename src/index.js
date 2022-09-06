@@ -1,5 +1,7 @@
+
 const express = require('express');
 const cors = require('cors');
+const { v4: uuidv4 } = require('uuid');
 
 const server = express();
 server.use(cors());
@@ -12,10 +14,14 @@ server.listen(serverPort, () => {
 });
 
 server.post('/card', (req, res) => {
+    const newCard = { ...req.body }
+
+    console.log(req.body);
     const response = {
         success: true,
-        cardURL:  'https://awesome-profile-cards.herokuapp.com/card/93271662377002269'
+        cardURL: 'https://awesome-profile-cards.herokuapp.com/card/93271662377002269'
     };
+    console.log('holita');
     res.json(response);
 });
 
