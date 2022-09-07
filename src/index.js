@@ -17,21 +17,17 @@ server.listen(serverPort, () => {
     console.log(`Server listening at http://localhost:${serverPort}`);
 });
 
-//Servidor de ficheros estáticos.
-const staticServerPath = './src/public-react'
-server.use(express.static(staticServerPath));
-
 
 server.post('/card', (req, res) => {
     const newCard = { id:uuidv4(), ...req.body }
     savedCard.push(newCard);
 
     console.log(newCard)
-
+    console.log(savedCard)
     const result = newCard.name && newCard.job && newCard.email && newCard.linkedin && newCard.github 
      ?{
         success: true,
-        cardURL: `https://localhost:4000/card/${newCard.id}`
+        cardURL: `http://localhost:4000/card/${newCard.id}`
      }
      :{
         success: false,
@@ -47,9 +43,14 @@ server.get('/card/:id', (req, res) => {
     // });
     console.log(req.params)
     const result = savedCard.find(item => item.id === req.params.id)
-    console.log(result)
+    
+    console.log(typeof savedCard[0].id)
     res.render('pages/card', result )
 });
+
+//Servidor de ficheros estáticos.
+const staticServerPath = './src/public-react'
+server.use(express.static(staticServerPath));
 
 const cardStaticStyles = './src/public-css';
 server.use(express.static(cardStaticStyles));
