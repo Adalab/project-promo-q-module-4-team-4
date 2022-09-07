@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/main.css" />
+    <title>Awsome profile cards</title>
+</head>
+
+<body>
+    <main>
+        <section class="viewfinder palette1 typography1">
+            <div class="viewfinder__card">
+                <div class="viewfinder__card-title">
+                    <div class="viewfinder__card-title-rectangule"></div>
+                    <div class="viewfinder__card-titlebox">
+                        <h2 class="viewfinder__card-title-name">
+                            <%= name %>
+                        </h2>
+                        <h3 class="viewfinder__card-title-job">
+                            <%= job %>
+                        </h3>
+                    </div>
+                </div>
+                <div class="viewfinder__photo" title="Foto de la tarjeta" style="background-image: url('<%= photo %>')">
+                </div>
+                <div class="viewfinder__icons">
+                    <div class="viewfinder__icons-box">
+                        <a class="viewfinder__icons-link" href="tel: <%= phone %>">
+                            <i class="fas fa-mobile-alt"></i>
+                        </a>
+                    </div>
+                    <div class="viewfinder__icons-box">
+                        <a class="viewfinder__icons-link" href="mailto: <%= email %>">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                    <div class="viewfinder__icons-box">
+                        <a class="viewfinder__icons-link" href=" <%= linkedin %>" target="_blank">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                    <div class="viewfinder__icons-box">
+                        <a class="viewfinder__icons-link" href=" <%= github %>" target="_blank">
+                            <i class="fab fa-github-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+</body>
+
+</html>

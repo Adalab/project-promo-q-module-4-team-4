@@ -8,6 +8,8 @@ server.use(cors());
 
 server.use(express.json({limit: '10mb'}));
 
+server.set('view engine','ejs');
+
 const savedCard = [];
 
 const serverPort = 4000;
@@ -24,6 +26,8 @@ server.post('/card', (req, res) => {
     const newCard = { id:uuidv4(), ...req.body }
     savedCard.push(newCard);
 
+    console.log(newCard)
+
     const result = newCard.name && newCard.job && newCard.email && newCard.linkedin && newCard.github 
      ?{
         success: true,
@@ -38,11 +42,16 @@ server.post('/card', (req, res) => {
 });
 
 server.get('/card/:id', (req, res) => {
-    res.json({
-        url: 'https://awesome-profile-cards.herokuapp.com/card/93271662377002269'
-    });
+    // res.json({
+    //     url: 'https://awesome-profile-cards.herokuapp.com/card/93271662377002269'
+    // });
+    console.log(req.params)
+    const result = savedCard.find(item => item.id === req.params.id)
+    console.log(result)
+    res.render('pages/card', result )
 });
 
-
+const cardStaticStyles = './src/public-css';
+server.use(express.static(cardStaticStyles));
 
 
