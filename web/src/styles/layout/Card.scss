@@ -1,4 +1,4 @@
-@import "../core/_variables.scss";
+@import '../core/_variables.scss';
 
 .main-app {
   min-height: 80vh;
@@ -8,7 +8,6 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
-    height: 76vh;
   }
 
   @media all and (min-width: 1024px) {
