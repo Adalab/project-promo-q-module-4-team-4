@@ -2,6 +2,11 @@ const express = require('express');
 const cors = require('cors');
 const { v4: uuidv4 } = require('uuid');
 
+const Database = require('better-sqlite3');
+const db = new Database('./src/db/database.db', {
+  verbose: console.log,
+});
+
 const server = express();
 server.use(cors());
 
