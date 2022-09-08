@@ -1,4 +1,4 @@
-@import "../core/_variables.scss";
+@import '../core/_variables.scss';
 /*SECCIÓN DEL TÍTULO*/
 
 .data {
@@ -18,7 +18,7 @@
 
 .fa-keyboard {
   margin-right: 10px;
-  color: $pink;
+  color: $light_orange;
   font-size: 1.4rem;
 }
 
@@ -52,7 +52,7 @@
   gap: 7px;
 
   & .data-input {
-    border: 2px $color_pink solid;
+    border: 2px $color_bluefuture solid;
     height: 30px;
     border-radius: 15px;
 
@@ -88,7 +88,7 @@
   & .image_preview {
     width: 30px;
     height: 30px;
-    border: 2px $color_pink solid;
+    border: 2px $color_bluefuture solid;
     background-size: cover;
     background-position: 50%;
   }

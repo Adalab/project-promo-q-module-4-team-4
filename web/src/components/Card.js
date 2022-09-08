@@ -1,8 +1,8 @@
-import Header from "./Header";
-import CardPreview from "./CardPreview";
-import logo from "../images/logo.jpg";
-import Form from "./Form";
-import "../styles/layout/Card.scss";
+import Header from './Header';
+import CardPreview from './CardPreview';
+import logo from '../images/logo.png';
+import Form from './Form';
+import '../styles/layout/Card.scss';
 
 const Card = (props) => {
   return (

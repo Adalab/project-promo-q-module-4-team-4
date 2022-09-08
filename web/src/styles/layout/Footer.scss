@@ -1,4 +1,4 @@
-@import "../core/_variables.scss";
+@import '../core/_variables.scss';
 
 .footer {
   display: flex;
@@ -38,13 +38,12 @@
 
     @media all and (min-width: 768px) {
       padding: 0px 40px 10px;
-
     }
 
     &--img {
-      width: 220px;
+      padding-top: 10px;
+      width: 210px;
       height: 90px;
-
     }
   }
 }

@@ -44,7 +44,7 @@ const Share = (props) => {
           <i className="fa fa-address-card" aria-hidden="true"></i> crear
           tarjeta
         </button>
-        <p>{msg}</p>
+        <p className="createCardMsg">{msg}</p>
         <section className="font_success">
           <p className="card_create js_message collapsed"></p>
           <a

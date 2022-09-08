@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import ls from '../services/localStorage';
 import { Routes, Route } from 'react-router-dom';
 import Header from './Header';
-import logoGif from '../images/logo.gif';
+import logoGif from '../images/logoGif.gif';
 
 import Card from './Card';
 import Landing from './Landing';
@@ -130,7 +130,6 @@ function App() {
       });
     }
   };
-
 
   return (
     <div>

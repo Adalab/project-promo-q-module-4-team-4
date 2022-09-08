@@ -1,16 +1,16 @@
-import logo from "../images/logo-footer.jpg";
-import "../styles/layout/Footer.scss";
+import logo from '../images/logo.png';
+import '../styles/layout/Footer.scss';
 const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer__text">
         <p>
-          Monday haters <small>©2022</small>
+          Back-end to the future <small>©2022</small>
         </p>
       </div>
       <div className="footer__logo">
         <a href="./index.html#">
-          {" "}
+          {' '}
           <img
             className="footer__logo--img"
             src={logo}
