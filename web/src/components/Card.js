@@ -1,6 +1,6 @@
 import Header from './Header';
 import CardPreview from './CardPreview';
-import logo from '../images/logo.png';
+import logo from '../images/logo.PNG';
 import Form from './Form';
 import '../styles/layout/Card.scss';
 
