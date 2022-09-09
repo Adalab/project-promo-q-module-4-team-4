@@ -67,7 +67,7 @@ server.get('/card/:id', (req, res) => {
   // res.json({
   //     url: 'https://awesome-profile-cards.herokuapp.com/card/93271662377002269'
   // });
-  //   console.log(req.params);
+
   //   const result = savedCard.find((item) => item.id === req.params.id);
   const query = db.prepare(`SELECT * FROM cards WHERE id=?`);
   const result = query.get(req.params.id);
