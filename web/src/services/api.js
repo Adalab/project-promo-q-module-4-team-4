@@ -1,5 +1,8 @@
 const sendToApi = (data) => {
-  return fetch("http://localhost:4000/card", {
+
+  const url = 'back-end-to-the-future.herokuapp.com' || 'localhost:4000';
+  
+  return fetch(`http://${url}/card`, {
     method: "POST",
     headers: {
       "content-type": "application/json",

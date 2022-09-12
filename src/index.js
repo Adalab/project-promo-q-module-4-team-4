@@ -71,6 +71,7 @@ server.get('/card/:id', (req, res) => {
   //   const result = savedCard.find((item) => item.id === req.params.id);
   const query = db.prepare(`SELECT * FROM cards WHERE id=?`);
   const result = query.get(req.params.id);
+  console.log(result)
 
   res.render('pages/card', result);
 });
