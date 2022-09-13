@@ -69,9 +69,6 @@ server.get('/card/:id', (req, res) => {
   const query = db.prepare(`SELECT * FROM cards WHERE id=?`);
   const result = query.get(req.params.id);
   
-  result.photo === './static/media/img_default.47405829335cc477d137.jpg' 
-    ?result.photo = '/img_default.47405829335cc477d137.jpg'
-    :result.photo = result.photo;
 
   res.render('pages/card', result);
 });
@@ -84,5 +81,3 @@ server.use(express.static(staticServerPath));
 const cardStaticStyles = './src/public-css';
 server.use(express.static(cardStaticStyles));
 
-const cardStaticImg = './src/public-img';
-server.use(express.static(cardStaticImg));
