@@ -17,7 +17,7 @@ server.set('view engine', 'ejs');
 
 const serverPort = process.env.PORT || 4000;
 server.listen(serverPort, () => {
-  console.log(`Server listening at http://localhost:${serverPort}`);
+  console.log(`Server listening at https://localhost:${serverPort}`);
 });
 
 
