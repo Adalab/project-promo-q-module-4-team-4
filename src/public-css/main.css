@@ -18,7 +18,6 @@
 }
 .viewfinder__photo {
   height: 200px;
-  background-image: url('../public-react/static/media/img_default.47405829335cc477d137.jpg');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
