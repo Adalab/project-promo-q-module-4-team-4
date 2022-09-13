@@ -1,10 +1,7 @@
-import { useState } from 'react';
 import '../styles/layout/Share.scss';
 
 
 const Share = (props) => {
-  
-  const [twitterCollapsible, setTwitterCollapsible] = useState('collapsed');
 
   const handleClick = (ev) => {
     props.handleCreateCard(ev);
