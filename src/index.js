@@ -70,7 +70,7 @@ server.get('/card/:id', (req, res) => {
   const result = query.get(req.params.id);
   
   result.photo === './static/media/img_default.47405829335cc477d137.jpg' 
-    ?result.photo = './img_default.47405829335cc477d137.jpg'
+    ?result.photo = '/img_default.47405829335cc477d137.jpg'
     :result.photo = result.photo;
 
   res.render('pages/card', result);
