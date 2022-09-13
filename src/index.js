@@ -50,7 +50,7 @@ server.post('/card', (req, res) => {
     finalCard.changes
       ?res.json({
         success: true,
-        cardURL: `http://${url}/card/${finalCard.lastInsertRowid}`,
+        cardURL: `https://${url}/card/${finalCard.lastInsertRowid}`,
       }) 
       :res.json({
         success: false,

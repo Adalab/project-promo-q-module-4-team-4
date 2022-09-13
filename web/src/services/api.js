@@ -6,7 +6,7 @@ const sendToApi = (data) => {
 console.log(process.env.NODE_ENV)
 
   console.log('llamando api')
-  return fetch(`http://${url}/card`, {
+  return fetch(`https://${url}/card`, {
     method: "POST",
     headers: {
       "content-type": "application/json",
