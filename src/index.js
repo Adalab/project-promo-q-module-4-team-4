@@ -83,4 +83,7 @@ server.use(express.static(staticServerPath));
 const cardStaticStyles = './src/public-css';
 server.use(express.static(cardStaticStyles));
 
+const defaultImage = './src/public-image';
+server.use(express.static(defaultImage));
+
 
