@@ -69,10 +69,12 @@ server.get('/card/:id', (req, res) => {
   const query = db.prepare(`SELECT * FROM cards WHERE id=?`);
   const result = query.get(req.params.id);
   console.log(result)
-  
+
   result.photo === './static/media/img_default.47405829335cc477d137.jpg' 
     ?result.photo='.src/public-react/static/media/img_default.47405829335cc477d137.jpg' 
-    :result.photo = result.photo
+    :result.photo = result.photo;
+
+    console.log(result.photo)
 
 
 
