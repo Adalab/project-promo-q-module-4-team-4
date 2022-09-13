@@ -14,20 +14,16 @@ server.use(express.json({ limit: '10mb' }));
 
 server.set('view engine', 'ejs');
 
-const savedCard = [];
 
 const serverPort = process.env.PORT || 4000;
 server.listen(serverPort, () => {
   console.log(`Server listening at http://localhost:${serverPort}`);
 });
 
+
 server.post('/card', (req, res) => {
   const newCard = { ...req.body };
-  // savedCard.push(newCard);
-
-  console.log(newCard);
-  // console.log(savedCard);
-
+  console.log(req)
   if (
     newCard.name &&
     newCard.job &&
@@ -49,12 +45,18 @@ server.post('/card', (req, res) => {
       newCard.photo
     );
 
-    const result = {
-      success: true,
-      cardURL: `http://localhost:4000/card/${finalCard.lastInsertRowid}`,
-    };
-    console.log(finalCard);
-    return res.json(result);
+    const url = process.env.NODE_ENV === 'production' ?'back-end-to-the-future.herokuapp.com' :'localhost:4000';
+
+    finalCard.changes
+      ?res.json({
+        success: true,
+        cardURL: `http://${url}/card/${finalCard.lastInsertRowid}`,
+      }) 
+      :res.json({
+        success: false,
+        errorMsg: 'Los datos no han sido guardados'
+      });
+
   } else {
     return {
       success: false,
@@ -64,17 +66,15 @@ server.post('/card', (req, res) => {
 });
 
 server.get('/card/:id', (req, res) => {
-  // res.json({
-  //     url: 'https://awesome-profile-cards.herokuapp.com/card/93271662377002269'
-  // });
-
-  //   const result = savedCard.find((item) => item.id === req.params.id);
   const query = db.prepare(`SELECT * FROM cards WHERE id=?`);
   const result = query.get(req.params.id);
   console.log(result)
 
+
+
   res.render('pages/card', result);
 });
+
 
 //Servidor de ficheros estáticos.
 const staticServerPath = './src/public-react';
@@ -82,3 +82,5 @@ server.use(express.static(staticServerPath));
 
 const cardStaticStyles = './src/public-css';
 server.use(express.static(cardStaticStyles));
+
+

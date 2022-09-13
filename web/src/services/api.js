@@ -1,7 +1,11 @@
 const sendToApi = (data) => {
 
-  const url = 'back-end-to-the-future.herokuapp.com' || 'localhost:4000';
+  const url = process.env.NODE_ENV === 'production' ?'back-end-to-the-future.herokuapp.com' :'localhost:4000';
   
+  console.log(url)
+
+
+  console.log('llamando api')
   return fetch(`http://${url}/card`, {
     method: "POST",
     headers: {

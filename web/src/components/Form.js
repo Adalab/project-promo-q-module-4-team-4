@@ -42,6 +42,10 @@ const Form = (props) => {
         preview={props.preview}
         handleCollapsables={props.handleCollapsables}
         shareCollapsed={props.shareCollapsed}
+        updateMsg={props.updateMsg}
+        msg={props.msg}
+        twitterCollapsible={props.twitterCollapsible}
+        setTwitterCollapsible={props.setTwitterCollapsible}
       />
     </form>
   );

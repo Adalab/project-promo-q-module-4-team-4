@@ -1,8 +1,10 @@
-import '../styles/layout/Share.scss';
 import { useState } from 'react';
-// import CreateCardMsg from './CreateCardMsg';
+import '../styles/layout/Share.scss';
+
+
 const Share = (props) => {
-  const [msg, setMsg] = useState('');
+  
+  const [twitterCollapsible, setTwitterCollapsible] = useState('collapsed');
 
   const handleClick = (ev) => {
     props.handleCreateCard(ev);
@@ -13,9 +15,10 @@ const Share = (props) => {
       props.dataCard.linkedin &&
       props.dataCard.github
     ) {
-      setMsg('La tarjeta ha sido creada con éxito');
+      props.updateMsg('La tarjeta ha sido creada con éxito');
+      props.setTwitterCollapsible('');
     } else {
-      setMsg('Debes rellenar todos los campos');
+      props.updateMsg('Debes rellenar todos los campos');
     }
   };
 
@@ -44,12 +47,11 @@ const Share = (props) => {
           <i className="fa fa-address-card" aria-hidden="true"></i> crear
           tarjeta
         </button>
-        <p className="createCardMsg">{msg}</p>
+        <p className="createCardMsg">{props.msg}</p>
         <section className="font_success">
           <p className="card_create js_message collapsed"></p>
           <a
             className="card_link js_url"
-            // se ha quitado la clase collapsed
             href={props.preview.url}
             rel="noreferrer"
             target="_blank"
@@ -58,9 +60,9 @@ const Share = (props) => {
           </a>
 
           <a
-            className="button_twiter js_button_twitter"
-            // Se ha quitado la clase collapsed
-            href="true"
+            className={`button_twiter js_button_twitter ${props.twitterCollapsible}`}
+            href={`https://twitter.com/intent/tweet?text=Hello%20world%20mi%20tarjeta&url=${props.preview.url}`}
+            rel="noreferrer"
             target="_blank"
           >
             <i className="fa-brands fa-twitter"></i>

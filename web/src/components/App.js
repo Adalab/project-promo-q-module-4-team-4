@@ -8,6 +8,7 @@ import logoGif from '../images/logoGif.gif';
 import Card from './Card';
 import Landing from './Landing';
 import Footer from './Footer';
+import defaulfPhoto from '../images/img_default.jpg';
 
 function App() {
   const [preview, setPreview] = useState({});
@@ -21,9 +22,18 @@ function App() {
       email: '',
       linkedin: '',
       github: '',
-      photo: 'images/default.png',
+      photo: defaulfPhoto,
     })
   );
+
+  const [msg, setMsg] = useState(''); 
+
+  const updateMsg = (msg) => {
+    setMsg(msg);
+  }
+
+  const [twitterCollapsible, setTwitterCollapsible] = useState('collapsed');
+
   const [designCollapsed, setDesignCollapsed] = useState({
     collapsed: '',
     rotate: '',
@@ -41,6 +51,9 @@ function App() {
     setDataCard({ ...dataCard, [inputName]: inputValue });
   };
   const resetDataCard = () => {
+    setTwitterCollapsible('');
+    setPreview({});
+    setMsg('');
     setDataCard({
       palette: '1',
       name: '',
@@ -49,7 +62,7 @@ function App() {
       email: '',
       linkedin: '',
       github: '',
-      photo: 'images/default.png',
+      photo: defaulfPhoto
     });
   };
   const updatePreview = (apiResponse) => {
@@ -160,6 +173,10 @@ function App() {
               fillCollapsed={fillCollapsed}
               shareCollapsed={shareCollapsed}
               handleCollapsables={handleCollapsables}
+              updateMsg={updateMsg}
+              msg={msg}
+              twitterCollapsible={twitterCollapsible}
+              setTwitterCollapsible={setTwitterCollapsible}
             />
           }
         />

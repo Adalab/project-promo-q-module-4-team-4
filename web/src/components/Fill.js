@@ -53,7 +53,7 @@ const Fill = (props) => {
 
             <div
               className="image_preview "
-              style={{ backgroundImage: `url(${props.dataCard.photo})` }}
+              style={{ backgroundImage: `url(${props.dataCard.photo})` , backgroundPosition:'top'}}
             ></div>
           </div>
         </label>

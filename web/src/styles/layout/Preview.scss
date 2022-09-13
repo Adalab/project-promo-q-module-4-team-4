@@ -19,16 +19,18 @@
     width: 94px;
     height: 36px;
     border-radius: 20px;
-    border: solid 1px $color_bluefuture;
+    border: solid 1px rgb(211, 134, 34);
     background-color: $background_index;
     text-transform: uppercase;
     color: $color_bluefuture;
     grid-column: 1 / 2;
     font-size: 1.4rem;
     font-weight: bold;
+    color: rgb(211, 134, 34);
 
     .icon-button {
       margin-right: 6px;
+      color: rgb(211, 134, 34);
     }
   }
 

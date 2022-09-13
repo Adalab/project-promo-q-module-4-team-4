@@ -25,7 +25,7 @@ const CardPreview = (props) => {
         </div>
         <div
           className="preview-img "
-          style={{ backgroundImage: `url(${props.dataCard.photo})` }}
+          style={{ backgroundImage: `url(${props.dataCard.photo})`, backgroundPosition:'top' }}
         >
         </div>
         <div className="preview-icon-contact">

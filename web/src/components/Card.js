@@ -24,6 +24,10 @@ const Card = (props) => {
           fillCollapsed={props.fillCollapsed}
           shareCollapsed={props.shareCollapsed}
           handleCollapsables={props.handleCollapsables}
+          updateMsg={props.updateMsg}
+          msg={props.msg}
+          twitterCollapsible={props.twitterCollapsible}
+          setTwitterCollapsible={props.setTwitterCollapsible}
         />
       </main>
     </>
